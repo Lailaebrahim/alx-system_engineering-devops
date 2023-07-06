@@ -1,2 +1,1 @@
 #!/bin/bash
-ls -1 -A -v | awk '{ printf "%s%s", $0, (/^[^.]/ && -d $0 ? "/" : ""); sep="," } END { print "" }'
