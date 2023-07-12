@@ -1,2 +1,2 @@
 #!/bin/bash
-find "$(pwd)"  -depth -empty  | cut -d'/' -f2 | echo
+find "$(pwd)" -depth -empty -printf '%P\n'
