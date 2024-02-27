@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #a Bash script that install nginx on ubuntu machine
 sudo apt-get update
-sudo apt-get install nginx
+sudo apt-get -y install nginx
 sudo service nginx start
 ufw allow 'Nginx HTTP'
 echo "Hello World!" > /var/www/html/index.nginx-debian.html
