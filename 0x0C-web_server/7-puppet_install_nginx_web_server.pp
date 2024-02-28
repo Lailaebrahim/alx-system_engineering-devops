@@ -12,17 +12,18 @@ package { 'nginx' :
 #start nginx service
 service { 'nginx' :
   ensure  => running,
-  enable  => true,
   require => Package['nginx']
 }
 
 #write Hello World! in the root page
 file {'/var/www/html/index.nginx-debian.html':
   content => 'Hello World!'
+  notify  => Service['nginx'],
 }
 
 #configure nginx server to redirect page redirect_me to another
 exec {'redirect_me':
   command  => 'sudo sed -i "24i\	rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default',
-  provider => 'shell'
+  provider => 'shell',
+  notify  => Service['nginx'],
 }
