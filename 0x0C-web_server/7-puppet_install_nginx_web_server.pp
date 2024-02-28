@@ -1,13 +1,16 @@
+#install nginx web server
 package { 'nginx' :
 	ensure => install,
 }
 
+#start nginx service
 service { 'nginx' :
 	ensure => running,
 	enable => true,
 }
 
 
+#Configure your Nginx server so that /redirect_me is redirecting to another page.
 file { '/etc/nginx/sites-available/default':
      ensure  => file,
      content => "server {
@@ -38,4 +41,11 @@ file { '/etc/nginx/sites-available/default':
         }
 }"
 	notify => Service['nginx'],
+}
+
+#Nginx at its root return a page that contains the string Hello World!
+file {'/var/www/html/index.nginx-debian.html':
+     ensure => file,
+     content => 'Hello World!"
+     notify => Service['nginx'],
 }
