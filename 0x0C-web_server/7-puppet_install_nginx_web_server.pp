@@ -13,7 +13,6 @@ package { 'nginx' :
 service { 'nginx' :
   ensure  => running,
   enable  => true,
-  refresh => true,
   require => Package['nginx']
 }
 
