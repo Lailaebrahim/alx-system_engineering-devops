@@ -7,6 +7,6 @@ sudo apt-get -y install nginx
 sudo apt install haproxy
 sudo service haproxy start
 sudo echo "frontend my_frontend\n    bind *:80\n    default_backend my_backend\n" >> /etc/haproxy/haproxy.cfg
-sudo echo "backend my_backend\n    balance roundrobin\n    server 438412-web-01 54.174.80.164:80\n    server 438412-web-02 54.161.236.106:80" >> /etc/haproxy/haproxy.cfg
+sudo echo "backend my_backend\n    balance roundrobin\n    server 438412-web-01 54.174.80.164:80 check\n    server 438412-web-02 54.161.236.106:80 check" >> /etc/haproxy/haproxy.cfg
 sudo echo "ENABLED=1" >> /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
