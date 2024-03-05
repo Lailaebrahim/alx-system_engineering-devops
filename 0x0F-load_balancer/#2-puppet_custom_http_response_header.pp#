@@ -30,7 +30,7 @@ exec {'redirect_me':
       
 #HTTP header named X-Served-By it's value the hostname of the server Nginx is running on
 exec {'HTTP header':
-   command => 'sed -i "25i\	add_header X-Served-By \$hostname;" /etc/nginx/sites-available/default',
-   provider => 'shell',
+   command => 'sed -i "25i\	server_name ;" /etc/nginx/sites-available/default',
+   provider => 'shell'
    notify   => Service['nginx'],
      }
