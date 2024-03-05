@@ -1,0 +1,1 @@
+frontend my_frontend\n    bind *:80\n    default_backend my_backend\n
