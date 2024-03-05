@@ -8,4 +8,5 @@ sudo apt install haproxy
 sudo service haproxy start
 sudo sed -i -e '$i\frontend my_frontend\n    bind *:80\n    default_backend my_backend\n' /etc/haproxy/haproxy.cfg
 sudo sed -i -e '$i\backend my_backend\n    balance roundrobin\n    server 438412-web-01 54.174.80.164:80 check\n    server 438412-web-02 54.161.236.106:80 check\n' /etc/haproxy/haproxy.cfg
+sudo sed -i -e '$i\ENABLED=1' /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
