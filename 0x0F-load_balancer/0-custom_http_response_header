@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Configure Nginx so that its HTTP response contains a custom header (on web-01 and web-02)
+#The name of the custom HTTP header must be X-Served-By
+#The value of the custom HTTP header must be the hostname of the server Nginx is running on
+sudo sed -i '26i\        server_name 438412-web-01;' /etc/nginx/sites-available/default
+sudo sed -i '27i\        add_header X-Served-By $server_name always;' /etc/nginx/sites-available/default
+sudo service nginx restart
