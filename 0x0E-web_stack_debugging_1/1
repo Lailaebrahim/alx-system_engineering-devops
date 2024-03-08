@@ -1,0 +1,11 @@
+Reading package lists...
+Building dependency tree...
+Reading state information...
+nginx is already the newest version (1.18.0-0ubuntu1.4).
+The following packages were automatically installed and are no longer required:
+  docker-buildx-plugin docker-ce-rootless-extras docker-compose-plugin
+  slirp4netns
+Use 'sudo apt autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+ * Starting nginx nginx
+   ...done.
