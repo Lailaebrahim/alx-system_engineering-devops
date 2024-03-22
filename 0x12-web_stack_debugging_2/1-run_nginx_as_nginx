@@ -2,7 +2,7 @@
 #Bash script that makes nginx must be running as nginx user
 #nginx must be listening on all active IPs on port 8080
 chmod 644 /etc/nginx/nginx.conf
-sed '1s/.*/user nginx;/'
-sed '24s/.*//\tlisten [::]:80 default_server;/'
+sed -Ei 's/\s*#?\s*user .*/user nginx;/' /etc/nginx/nginx.conf
+sed -Ei 's/(listen (\[::\]:)?80) /\180 /' /etc/nginx/sites-enabled/default
 sudo service nginx stop
 su nginx -s /bin/bash -c 'service nginx restart'
