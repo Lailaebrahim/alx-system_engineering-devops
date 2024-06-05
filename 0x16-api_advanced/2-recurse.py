@@ -11,12 +11,12 @@ import requests
 
 def recurse(subreddit, hot_list=[], after="", count=0):
     """Returns a list of titles of all hot posts on a given subreddit."""
-    url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
-    header = {"User-Agent": "Mozilla/5.0"}
+    url = f"https://www.reddit.com/r/{subreddit}/hot/.json"
+    header = {'User-agent': 'Laila Ebrahim'}
     params = {
         "after": after,
         "count": count,
-        "limit": 100
+        "limit": 200
     }
     if hot_list is None:
         hot_list = []
