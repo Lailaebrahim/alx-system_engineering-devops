@@ -9,10 +9,10 @@ import requests
 def top_ten(subreddit):
     """first 10 hot posts listed for a given subreddit"""
     url = "https://www.reddit.com/r/{}/hot/.json?limit=10".format(subreddit)
-    header = {"User-Agent": "Mozilla/5.0"}
-    response_url = requests.get(url, headers=header,
-                                allow_redirects=False).json()
+
     try:
+        response_url = requests.get(url, headers=header,
+                                    allow_redirects=False).json()
         for post in response_url.get('data').get('children'):
             print(post.get('data').get('title'))
     except Exception:
