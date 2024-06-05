@@ -18,6 +18,8 @@ def recurse(subreddit, hot_list=[], after="", count=0):
         "count": count,
         "limit": 100
     }
+    if hot_list is None:
+        hot_list = []
     response = requests.get(url, headers=header, params=params,
                             allow_redirects=False)
     if response.status_code == 404:
