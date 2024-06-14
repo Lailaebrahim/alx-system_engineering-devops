@@ -17,7 +17,8 @@ server {
     listen 80 default_server;
     listen [::]:80 default_server;
 
-    server_name 438412-web-01;
+    server_name _;
+    server_name 100.25.167.60;
     add_header X-Served-By $server_name;
 
     root /var/www/html;
