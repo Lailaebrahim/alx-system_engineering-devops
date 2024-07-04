@@ -21,13 +21,13 @@ def number_of_subscribers(subreddit):
 
         # Check if the request was successful and not a redirect
         if response.status_code == 200:
-        # Parse the JSON response
+            # Parse the JSON response
             data = response.json()
             # Return the number of subscribers
             return data['data']['subscribers']
         else:
-        # If the subreddit is invalid or not found, return 0
+            # If the subreddit is invalid or not found, return 0
             return 0
-    except:
+    except Exception:
         # If any error occurs during the process, return 0
         return 0
