@@ -4,6 +4,6 @@
 # which means :
 # The master process will restart all worker processes one by one
 # New requests will be directed to the new workers
-# Old workers will finish processing their current requests before shutting downn
+# Old workers will finish processing their current requests before shutting down
 
-ps aux | grep gunicorn | awk '{ print $2 }' | xargs kill -HUP
+pgrep gunicorn | awk '{ print $2 }' | xargs kill -HUP
