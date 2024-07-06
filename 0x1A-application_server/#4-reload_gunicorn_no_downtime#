@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-# Script that restart Gunicorn gracefully
-# it searches for the Gunicorn Matser process and sends signup signal to it
-# which means :
-# The master process will restart all worker processes one by one
-# New requests will be directed to the new workers
-# Old workers will finish processing their current requests before shutting down
-PID=$(pgrep gunicorn)
-kill -9 -HUP "$PID"
