@@ -6,5 +6,4 @@
 # New requests will be directed to the new workers
 # Old workers will finish processing their current requests before shutting down
 PID=$(pgrep gunicorn)
-kill -SIGHUP "$PID"
-
+kill -9 -HUP "$PID"
