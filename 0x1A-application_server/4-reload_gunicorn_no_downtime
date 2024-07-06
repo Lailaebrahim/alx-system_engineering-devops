@@ -6,5 +6,5 @@
 # New requests will be directed to the new workers
 # Old workers will finish processing their current requests before shutting downn
 
-MasterPID=$(pgrep gunicorn | head -n 1)
-kill -HUP "$MasterPID"
+PID=$(pgrep gunicorn | head -n 1)
+sudo kill -HUP "$PID"
